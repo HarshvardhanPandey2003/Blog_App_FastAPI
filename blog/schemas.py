@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-
 app = FastAPI()
-@app.post('/blog')
-def index():
-    return {"data": "All blogs here"}
 
+class Blog(BaseModel):
+    title:str
+    body:str
